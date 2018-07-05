@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
-import { Breakfast, Lunch, Dinner, Postworkout } from './';
+import { Breakfast, Lunch, Dinner, Postworkout } from './tabs';
 
 export default createBottomTabNavigator(
     {

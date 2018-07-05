@@ -54,34 +54,23 @@ class Login extends Component {
                         success
                         onPress={this.onLoginPress.bind(this)}
                     >
-                        <Text style={styles.text}> Login </Text>
+                        <Text style={{color: 'white'}}> Login </Text>
                     </Button>
-                    <Button style={styles.button} full rounded primary>
-                        <Text style={styles.text}> Sign Up </Text>
-                    </Button>
-                    <Button
+
+                    <Text style={styles.textStyle}> Or </Text>
+
+                    <Card
                         onPress={this.onFBSigninPress.bind(this)}
-                        style={styles.button}
-                        full
-                        rounded
-                        primary
+                        source={require('../../../assets/if_facebook_317746.png')}
                     >
-                        <Icon
-                            type="FontAwesome"
-                            name="facebook"
-                            style={{ fontSize: 30 }}
-                        />
+                        Sign in with Facebook
+                    </Card>
 
-                        <Text style={styles.text}> Sign in with Facebook </Text>
-                    </Button>
-
-                    <Card onPress={this.onGoogleSigninPress.bind(this)}>
-                        <Icon
-                            type="FontAwesome"
-                            name="google"
-                            style={{ fontSize: 30 }}
-                        />
-                        <Text> Sign in with Google </Text>
+                    <Card
+                        onPress={this.onGoogleSigninPress.bind(this)}
+                        source={require('../../../assets/icons8-google-50.png')}
+                    >
+                        Sign in with Google
                     </Card>
                 </Form>
             </Container>
@@ -115,7 +104,11 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 10
     },
-    text: {
-        color: 'white'
+    textStyle:{
+        fontSize: 22,
+        fontWeight: '400',
+        alignSelf: 'center',
+        marginTop: 10,
+        color: '#31373f'
     }
 });

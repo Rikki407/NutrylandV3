@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import Login from './src/screens/auth/login';
 import reducers from './src/reducers';
+import Main from './src/screens/home/main';
 
 export default class App extends React.Component {
     componentWillMount() {
@@ -23,7 +24,7 @@ export default class App extends React.Component {
         const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
         return (
             <Provider store={store}>
-                <Login />
+                <Main />
             </Provider>
         );
     }

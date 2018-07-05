@@ -7,8 +7,8 @@ import {
     Image,
     Dimensions
 } from 'react-native';
-import Category from '../components/Breakfast/Category';
-import Home from '../components/Breakfast/Home';
+import Category from './category';
+import Home from './home';
 
 const { width } = Dimensions.get('window');
 class Breakfast extends Component {
@@ -38,15 +38,15 @@ class Breakfast extends Component {
                                 showsHorizontalScrollIndicator={false}
                             >
                                 <Category
-                                    imageUri={require('../assets/demo_pic1.jpg')}
+                                    imageUri={require('../../../../assets/splash.png')}
                                     name="Home"
                                 />
                                 <Category
-                                    imageUri={require('../assets/demo_pic2.jpg')}
+                                    imageUri={require('../../../../assets/splash.png')}
                                     name="Experiences"
                                 />
                                 <Category
-                                    imageUri={require('../assets/demo_pic3.jpg')}
+                                    imageUri={require('../../../../assets/splash.png')}
                                     name="Restaurant"
                                 />
                             </ScrollView>
@@ -76,7 +76,7 @@ class Breakfast extends Component {
                                         borderWidth: 1,
                                         borderColor: '#dddddd'
                                     }}
-                                    source={require('../assets/demo_pic1.jpg')}
+                                    source={require('../../../../assets/splash.png')}
                                 />
                             </View>
                         </View>

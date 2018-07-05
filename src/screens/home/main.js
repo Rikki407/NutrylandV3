@@ -1,5 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
+import Icon from 'react-native-vector-icons/Ionicons';
+import IconMC from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Breakfast, Lunch, Dinner, Postworkout } from './tabs';
 
 export default createBottomTabNavigator(
@@ -9,11 +11,7 @@ export default createBottomTabNavigator(
             navigationOptions: {
                 tabBarLabel: 'Breakfast',
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon
-                        type="FontAwesome"
-                        name="utensils"
-                        style={{ fontSize: 24, tintColor }}
-                    />
+                    <Icon name="md-sunny" color={tintColor} size={24} />
                 )
             }
         },
@@ -22,10 +20,10 @@ export default createBottomTabNavigator(
             navigationOptions: {
                 tabBarLabel: 'Lunch',
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon
-                        type="FontAwesome"
-                        name="utensils"
-                        style={{ fontSize: 24, tintColor }}
+                    <IconMC
+                        name="food"
+                        color={tintColor}
+                        size={24}
                     />
                 )
             }
@@ -35,11 +33,7 @@ export default createBottomTabNavigator(
             navigationOptions: {
                 tabBarLabel: 'Dinner',
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon
-                        type="FontAwesome"
-                        name="utensils"
-                        style={{ fontSize: 24, tintColor }}
-                    />
+                    <Icon name="ios-moon" color={tintColor} size={24} />
                 )
             }
         },
@@ -48,10 +42,10 @@ export default createBottomTabNavigator(
             navigationOptions: {
                 tabBarLabel: 'Postworkout',
                 tabBarIcon: ({ tintColor }) => (
-                    <Icon
-                        type="FontAwesome"
-                        name="utensils"
-                        style={{ fontSize: 24, tintColor }}
+                    <IconMC
+                        name="run-fast"
+                        color={tintColor}
+                        size={24}
                     />
                 )
             }

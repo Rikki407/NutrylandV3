@@ -4,7 +4,6 @@ import firebase from 'firebase';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import Login from './src/screens/auth/login';
-import BottomNavigation from './src/components/main.js';
 import reducers from './src/reducers';
 
 export default class App extends React.Component {

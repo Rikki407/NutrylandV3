@@ -75,7 +75,12 @@ class Login extends Component {
                         <Text style={styles.text}> Sign in with Facebook </Text>
                     </Button>
 
-                    <Button onPress={this.onGoogleSigninPress.bind(this)}>
+                    <Button
+                        onPress={this.onGoogleSigninPress.bind(this)}
+                        style={styles.button}
+                        full
+                        rounded
+                    >
                         <Icon
                             type="FontAwesome"
                             name="facebook"

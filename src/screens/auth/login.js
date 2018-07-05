@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Container, Form, Item, Button, Label, Input, Icon } from 'native-base';
-import { Text, StyleSheet } from 'react-native';
+import { Container, Form, Item, Button, Label, Input, Text } from 'native-base';
+import { StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import {
     emailChanged,
@@ -54,7 +54,7 @@ class Login extends Component {
                         success
                         onPress={this.onLoginPress.bind(this)}
                     >
-                        <Text style={{color: 'white'}}> Login </Text>
+                        <Text style={{ color: 'white' }}> Login </Text>
                     </Button>
 
                     <Text style={styles.textStyle}> Or </Text>
@@ -72,6 +72,9 @@ class Login extends Component {
                     >
                         Sign in with Google
                     </Card>
+                    <Button transparent style={{alignSelf: 'center', marginTop: 30}}>
+                        <Text style={{fontSize: 18, textDecorationLine: 'underline'}}>Dont have an account?</Text>
+                    </Button>
                 </Form>
             </Container>
         );
@@ -104,7 +107,7 @@ const styles = StyleSheet.create({
     button: {
         marginTop: 10
     },
-    textStyle:{
+    textStyle: {
         fontSize: 22,
         fontWeight: '400',
         alignSelf: 'center',

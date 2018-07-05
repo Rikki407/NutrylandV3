@@ -9,7 +9,7 @@ import {
     signinWithFB,
     signinWithGoogle
 } from '../../actions';
-
+import Card from '../../components/Card';
 class Login extends Component {
     onEmailChange(text) {
         this.props.emailChanged(text);
@@ -75,19 +75,14 @@ class Login extends Component {
                         <Text style={styles.text}> Sign in with Facebook </Text>
                     </Button>
 
-                    <Button
-                        onPress={this.onGoogleSigninPress.bind(this)}
-                        style={styles.button}
-                        full
-                        rounded
-                    >
+                    <Card onPress={this.onGoogleSigninPress.bind(this)}>
                         <Icon
                             type="FontAwesome"
-                            name="facebook"
+                            name="google"
                             style={{ fontSize: 30 }}
                         />
                         <Text> Sign in with Google </Text>
-                    </Button>
+                    </Card>
                 </Form>
             </Container>
         );

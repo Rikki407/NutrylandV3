@@ -7,6 +7,7 @@ const Card = ({ onPress, source, children }) => {
         <TouchableOpacity onPress={onPress} style={styles.containerStyle}>
             <Image
                 source={source}
+            
                 style={{
                     alignSelf: 'center',
                     height: 33,

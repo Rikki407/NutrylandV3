@@ -6,7 +6,8 @@ import {
 
 const INITIAL_STATE = {
     email: '',
-    password: ''
+    password: '',
+    userLoggedIn: false
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -17,7 +18,7 @@ export default (state = INITIAL_STATE, action) => {
         case PASSWORD_CHANGED:
             return { ...state, password: action.payload };
         case EMAIL_LOGIN:
-            return { ...state };
+            return { ...state, userLoggedIn: true };
         default:
             return state;
     }

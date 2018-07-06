@@ -30,6 +30,9 @@ class Login extends Component {
     onGoogleSigninPress() {
         this.props.signinWithGoogle();
     }
+    onCreateAccountPress() {
+    }
+
     render() {
         return (
             <Container style={styles.container}>
@@ -78,6 +81,7 @@ class Login extends Component {
                     <Button
                         transparent
                         style={{ alignSelf: 'center', marginTop: 30 }}
+                        onPress={this.onCreateAccountPress.bind(this)}
                     >
                         <Text
                             style={{

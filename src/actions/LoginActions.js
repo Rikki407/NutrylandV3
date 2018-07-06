@@ -5,8 +5,9 @@ import {
     EMAIL_CHANGED,
     PASSWORD_CHANGED,
     EMAIL_LOGIN,
-    FB_SIGNIN,
-    GOOGLE_SIGNIN,
+    EMAIL_LOGIN_SUCCESS,
+    FB_SIGNIN_SUCCESS,
+    GOOGLE_SIGNIN_SUCCESS,
     IOS_CLIENT_ID,
     ANDROID_CLIENT_ID
 } from './types';
@@ -31,7 +32,7 @@ export const loginWithEmail = ({ email, password }) => {
         firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
-            .then(console.log('EmailLoginSuccess'))
+            .then(dispatch({ type: EMAIL_LOGIN_SUCCESS }))
             .catch(() => {
                 firebase
                     .auth()
@@ -52,27 +53,12 @@ export const signinWithFB = () => {
                 permissions: ['public_profile', 'email']
             }
         );
-        dispatch({
-            type: FB_SIGNIN
-        });
 
         if (type === 'success') {
-            const credential = firebase.auth.FacebookAuthProvider.credential(
+            const credentials = firebase.auth.FacebookAuthProvider.credential(
                 token
             );
-            firebase
-                .auth()
-                .signInAndRetrieveDataWithCredential(credential)
-                .then(
-                    firebase.auth().onAuthStateChanged(user => {
-                        if (user != null) {
-                            console.log(user);
-                        }
-                    })
-                )
-                .catch(error => {
-                    console.log(error);
-                });
+            socialLoginSuccess(dispatch, FB_SIGNIN_SUCCESS,credentials)
         }
     };
 };
@@ -84,20 +70,26 @@ export const signinWithGoogle = () => {
             androidClientId: ANDROID_CLIENT_ID,
             scopes: ['profile', 'email']
         });
-        dispatch({
-            type: GOOGLE_SIGNIN
-        });
         if (result.type === 'success') {
-            console.log('hello', result);
-            const credential = firebase.auth.GoogleAuthProvider.credential(
+            const credentials = firebase.auth.GoogleAuthProvider.credential(
                 result.idToken,
                 result.accessToken
             );
-            const currentUser = await firebase
-                .auth()
-                .signInAndRetrieveDataWithCredential(credential);
-            
-            console.log(currentUser);
+            socialLoginSuccess(dispatch, GOOGLE_SIGNIN_SUCCESS, credentials)
         }
     };
 };
+
+const socialLoginSuccess = async (dispatch, type, credentials) => {
+    await firebase.auth().signInAndRetrieveDataWithCredential(credentials)
+                .then(
+                    firebase.auth().onAuthStateChanged(user => {
+                        if (user != null) {
+                            dispatch({
+                                type: type,
+                                payload: user
+                            });
+                        }
+                    })
+                );
+}

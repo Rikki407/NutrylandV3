@@ -7,6 +7,7 @@ import { createStackNavigator } from 'react-navigation';
 import LoginScreen from './src/screens/auth/login';
 import reducers from './src/reducers';
 import MainScreen from './src/screens/home/main';
+import SignupScreen from './src/screens/auth/signup';
 
 export default class App extends React.Component {
     componentWillMount() {
@@ -32,5 +33,6 @@ export default class App extends React.Component {
 }
 const AppStackNavigator = createStackNavigator({
     Login: LoginScreen,
+    SignUp: SignupScreen,
     Home : MainScreen
 });

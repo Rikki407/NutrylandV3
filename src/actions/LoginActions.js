@@ -87,7 +87,7 @@ const socialLoginSuccess = async (dispatch, type, credentials) => {
             firebase.auth().onAuthStateChanged(user => {
                 if (user != null) {
                     dispatch({
-                        type: type,
+                        type,
                         payload: user
                     });
                 }

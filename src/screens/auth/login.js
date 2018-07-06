@@ -32,7 +32,7 @@ class Login extends Component {
         this.props.signinWithGoogle();
     }
     onCreateAccountPress() {
-        this.props.navigation.navigate('Home');
+        this.props.navigation.navigate('SignUp');
     }
 
     render() {

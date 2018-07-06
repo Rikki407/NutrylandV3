@@ -2,7 +2,8 @@ import {
     FIRST_NAME_CHANGED,
     LAST_NAME_CHANGED,
     REG_EMAIL_CHANGED,
-    REG_PASSWORD_CHANGED
+    REG_PASSWORD_CHANGED,
+    START_REGISTER_USER
 } from '../actions/types';
 const INITIAL_STATE = {
     fname: '',
@@ -21,6 +22,8 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, email: action.payload };
         case REG_PASSWORD_CHANGED:
             return { ...state, password: action.payload };
+        case START_REGISTER_USER:
+            return { ...state };
         default:
             return { ...state };
     }

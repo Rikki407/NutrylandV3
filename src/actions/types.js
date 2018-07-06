@@ -8,6 +8,7 @@ export const FIRST_NAME_CHANGED = 'first_name_changed';
 export const LAST_NAME_CHANGED = 'last_name_changed';
 export const REG_EMAIL_CHANGED = 'reg_email_changed';
 export const REG_PASSWORD_CHANGED = 'reg_password_changed';
+export const START_REGISTER_USER = 'start_registering_user';
 
 export const IOS_CLIENT_ID =
     '310937143639-nibpiag4tece3eqm807qqra62urlbs9r.apps.googleusercontent.com';

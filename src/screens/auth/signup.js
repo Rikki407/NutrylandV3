@@ -19,7 +19,7 @@ class SignUp extends Component {
     }
     registerButtonPressed() {
         const { email, password, fname, lname } = this.props;
-        this.props.registerUser();
+        this.props.registerUser({ email, password, fname, lname });
     }
     render() {
         return (

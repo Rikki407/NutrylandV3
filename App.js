@@ -3,9 +3,10 @@ import ReduxThunk from 'redux-thunk';
 import firebase from 'firebase';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import Login from './src/screens/auth/login';
+import { createStackNavigator } from 'react-navigation';
+import LoginScreen from './src/screens/auth/login';
 import reducers from './src/reducers';
-import Main from './src/screens/home/main';
+import MainScreen from './src/screens/home/main';
 
 export default class App extends React.Component {
     componentWillMount() {
@@ -24,8 +25,12 @@ export default class App extends React.Component {
         const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
         return (
             <Provider store={store}>
-                <Main />
+                <AppStackNavigator />
             </Provider>
         );
     }
 }
+const AppStackNavigator = createStackNavigator({
+    Login: LoginScreen,
+    Home : MainScreen
+});

@@ -96,6 +96,7 @@ export const signinWithGoogle = () => {
             const currentUser = await firebase
                 .auth()
                 .signInAndRetrieveDataWithCredential(credential);
+            
             console.log(currentUser);
         }
     };

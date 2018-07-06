@@ -11,6 +11,9 @@ import {
 } from '../../actions';
 import Card from '../../components/Card';
 class Login extends Component {
+    static navigationOptions = {
+        header: null
+    };
     onEmailChange(text) {
         this.props.emailChanged(text);
     }
@@ -72,8 +75,18 @@ class Login extends Component {
                     >
                         Sign in with Google
                     </Card>
-                    <Button transparent style={{alignSelf: 'center', marginTop: 30}}>
-                        <Text style={{fontSize: 18, textDecorationLine: 'underline'}}>Dont have an account?</Text>
+                    <Button
+                        transparent
+                        style={{ alignSelf: 'center', marginTop: 30 }}
+                    >
+                        <Text
+                            style={{
+                                fontSize: 18,
+                                textDecorationLine: 'underline'
+                            }}
+                        >
+                            Dont have an account?
+                        </Text>
                     </Button>
                 </Form>
             </Container>

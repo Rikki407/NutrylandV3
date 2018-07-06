@@ -30,7 +30,7 @@ class SignUp extends Component {
     render() {
         return (
             <Container style={styles.container}>
-                <Form>
+                <Form style={{ flex: 0.8 }}>
                     <Item floatingLabel>
                         <Label>First Name</Label>
                         <Input
@@ -61,9 +61,10 @@ class SignUp extends Component {
                     </Item>
                     <Button
                         success
-                        rounded
                         full
+                        rounded
                         onPress={this.registerButtonPressed.bind(this)}
+                        style={{ marginTop: 50 }}
                     >
                         <Text>Register</Text>
                     </Button>

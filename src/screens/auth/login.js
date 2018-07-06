@@ -36,7 +36,6 @@ class Login extends Component {
     }
 
     render() {
-        console.log(this.props.navigation);
         return (
             <Container style={styles.container}>
                 <Form>

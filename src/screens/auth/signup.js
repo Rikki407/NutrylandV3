@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { Container, Form, Item, Button, Label, Input, Text } from 'native-base';
-import { changeFnText, changeLnText } from '../../actions';
+import {
+    changeFnText,
+    changeLnText,
+    changeEmailText,
+    changePasswordText,
+    registerUser
+} from '../../actions';
 
 class SignUp extends Component {
     fnTextChanged(text) {
@@ -72,7 +78,13 @@ const mapStateToProps = state => {
 };
 export default connect(
     mapStateToProps,
-    { changeFnText, changeLnText }
+    {
+        changeFnText,
+        changeLnText,
+        changeEmailText,
+        changePasswordText,
+        registerUser
+    }
 )(SignUp);
 
 const styles = StyleSheet.create({

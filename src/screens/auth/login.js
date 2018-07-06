@@ -11,9 +11,7 @@ import {
 } from '../../actions';
 import Card from '../../components/Card';
 class Login extends Component {
-    static navigationOptions = {
-        header: null
-    };
+    
     onEmailChange(text) {
         this.props.emailChanged(text);
     }
@@ -31,9 +29,11 @@ class Login extends Component {
         this.props.signinWithGoogle();
     }
     onCreateAccountPress() {
+        this.props.navigation.navigate('Home');
     }
 
     render() {
+        console.log(this.props.navigation)
         return (
             <Container style={styles.container}>
                 <Form>

@@ -37,7 +37,7 @@ export const loginWithEmail = ({ email, password }) => {
                 firebase
                     .auth()
                     .createUserWithEmailAndPassword(email, password)
-                    .then(console.log('EmailSignUpSuccess'));
+                    .then(emailLoginSuccess(dispatch));
             });
     };
 };
@@ -53,12 +53,11 @@ export const signinWithFB = () => {
                 permissions: ['public_profile', 'email']
             }
         );
-
         if (type === 'success') {
             const credentials = firebase.auth.FacebookAuthProvider.credential(
                 token
             );
-            socialLoginSuccess(dispatch, FB_SIGNIN_SUCCESS,credentials)
+            socialLoginSuccess(dispatch, FB_SIGNIN_SUCCESS, credentials);
         }
     };
 };
@@ -75,21 +74,34 @@ export const signinWithGoogle = () => {
                 result.idToken,
                 result.accessToken
             );
-            socialLoginSuccess(dispatch, GOOGLE_SIGNIN_SUCCESS, credentials)
+            socialLoginSuccess(dispatch, GOOGLE_SIGNIN_SUCCESS, credentials);
         }
     };
 };
 
 const socialLoginSuccess = async (dispatch, type, credentials) => {
-    await firebase.auth().signInAndRetrieveDataWithCredential(credentials)
-                .then(
-                    firebase.auth().onAuthStateChanged(user => {
-                        if (user != null) {
-                            dispatch({
-                                type: type,
-                                payload: user
-                            });
-                        }
-                    })
-                );
-}
+    await firebase
+        .auth()
+        .signInAndRetrieveDataWithCredential(credentials)
+        .then(
+            firebase.auth().onAuthStateChanged(user => {
+                if (user != null) {
+                    dispatch({
+                        type: type,
+                        payload: user
+                    });
+                }
+            })
+        );
+};
+
+const emailLoginSuccess = dispatch => {
+    firebase.auth().onAuthStateChanged(user => {
+        if (user != null) {
+            dispatch({
+                type: EMAIL_LOGIN_SUCCESS,
+                payload: user
+            });
+        }
+    });
+};

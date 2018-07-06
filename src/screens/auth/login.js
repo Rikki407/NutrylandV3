@@ -11,7 +11,10 @@ import {
 } from '../../actions';
 import Card from '../../components/Card';
 class Login extends Component {
-    
+    static navigationOptions = {
+        header: null
+    };
+
     onEmailChange(text) {
         this.props.emailChanged(text);
     }
@@ -33,7 +36,7 @@ class Login extends Component {
     }
 
     render() {
-        console.log(this.props.navigation)
+        console.log(this.props.navigation);
         return (
             <Container style={styles.container}>
                 <Form>

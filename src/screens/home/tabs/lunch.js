@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import SnackBar from 'react-native-snackbar-component';
 
 class Lunch extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text>Lunch Screen</Text>
+                <SnackBar
+                    visible
+                    textMessage="Hello There!"
+                    actionHandler={() => {
+                        console.log('snackbar button clicked!');
+                    }}
+                    actionText="let's go"
+                />{' '}
             </View>
         );
     }

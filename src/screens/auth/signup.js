@@ -13,7 +13,7 @@ import {
 class SignUp extends Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.userLoggedIn) {
-            this.props.navigation.navigate('Home');
+            this.props.navigation.replace('Home');
         }
     }
     fnTextChanged(text) {

@@ -4,7 +4,7 @@ export default class ToastText extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showToast: false
+            showToast: true
         };
     }
     render() {
@@ -17,7 +17,8 @@ export default class ToastText extends Component {
                             Toast.show({
                                 text: 'Wrong password!',
                                 textStyle: { color: 'yellow' },
-                                buttonText: 'Okay'
+                                buttonText: 'Okay',
+                                duration: 10000
                             })
                         }
                     >

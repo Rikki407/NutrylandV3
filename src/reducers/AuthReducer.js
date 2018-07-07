@@ -14,6 +14,7 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
+    console.log(action.type);
     switch (action.type) {
         case EMAIL_CHANGED:
             return { ...state, email: action.payload };
@@ -24,6 +25,7 @@ export default (state = INITIAL_STATE, action) => {
         case EMAIL_LOGIN_SUCCESS:
             return { ...state, userLoggedIn: true };
         case GOOGLE_SIGNIN_SUCCESS:
+            console.log('Success Google login');
             return { ...state, userLoggedIn: true };
         case FB_SIGNIN_SUCCESS:
             return { ...state, userLoggedIn: true };

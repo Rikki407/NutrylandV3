@@ -11,6 +11,11 @@ import {
 } from '../../actions';
 
 class SignUp extends Component {
+    componentWillMount() {
+        if (this.props.userLoggedIn) {
+            this.props.navigation.navigate('Home');
+        }
+    }
     fnTextChanged(text) {
         this.props.changeFnText(text);
     }
@@ -57,6 +62,7 @@ class SignUp extends Component {
                         <Input
                             autoCorrect={false}
                             onChangeText={this.passwordTextChanged.bind(this)}
+                            secureTextEntry
                         />
                     </Item>
                     <Button

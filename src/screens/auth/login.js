@@ -14,7 +14,11 @@ class Login extends Component {
     static navigationOptions = {
         header: null
     };
-
+    componentWillReceiveProps() {
+        if (this.props.userLoggedIn) {
+            this.props.navigation.navigate('Home');
+        }
+    }
     onEmailChange(text) {
         this.props.emailChanged(text);
     }
@@ -34,6 +38,7 @@ class Login extends Component {
     onCreateAccountPress() {
         this.props.navigation.navigate('SignUp');
     }
+    
 
     render() {
         return (
@@ -47,7 +52,7 @@ class Login extends Component {
                         />
                     </Item>
                     <Item floatingLabel>
-                        <Label>Password </Label>
+                        <Label>Password</Label>
                         <Input
                             autoCorrect={false}
                             autoCapitalize="none"

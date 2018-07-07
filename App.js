@@ -26,15 +26,14 @@ export default class App extends React.Component {
     render() {
         const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
         return (
-                <Provider store={store}>
-                    <AppStackNavigator />
-                </Provider>
+            <Provider store={store}>
+                <AppStackNavigator />
+            </Provider>
         );
     }
 }
 const AppStackNavigator = createStackNavigator({
-    Toast: ToastScreen,
+    Home: MainScreen,
     Login: LoginScreen,
-    SignUp: SignupScreen,
-    Home: MainScreen
+    SignUp: SignupScreen
 });

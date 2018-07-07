@@ -1,31 +1,29 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Text, Button, Toast } from 'native-base';
-export default class ToastText extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            showToast: true
-        };
-    }
+import { View, Text, StyleSheet } from 'react-native';
+import SnackBar from 'react-native-snackbar-component';
+
+class componentName extends Component {
     render() {
         return (
-            <Container>
-                <Header />
-                <Content padder>
-                    <Button
-                        onPress={() =>
-                            Toast.show({
-                                text: 'Wrong password!',
-                                textStyle: { color: 'yellow' },
-                                buttonText: 'Okay',
-                                duration: 10000
-                            })
-                        }
-                    >
-                        <Text>Toast</Text>
-                    </Button>
-                </Content>
-            </Container>
+            <View style={styles.container}>
+                <SnackBar
+                    visible
+                    textMessage="Hello There!"
+                    actionHandler={() => {
+                        console.log('snackbar button clicked!');
+                    }}
+                    actionText="let's go"
+                />
+            </View>
         );
     }
 }
+export default componentName;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+});

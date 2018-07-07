@@ -3,7 +3,6 @@ import ReduxThunk from 'redux-thunk';
 import firebase from 'firebase';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import { Root } from 'native-base';
 import { createStackNavigator } from 'react-navigation';
 import LoginScreen from './src/screens/auth/login';
 import reducers from './src/reducers';
@@ -27,11 +26,9 @@ export default class App extends React.Component {
     render() {
         const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
         return (
-            <Root>
                 <Provider store={store}>
                     <AppStackNavigator />
                 </Provider>
-            </Root>
         );
     }
 }

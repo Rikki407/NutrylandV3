@@ -20,11 +20,7 @@ export default createBottomTabNavigator(
             navigationOptions: {
                 tabBarLabel: 'Lunch',
                 tabBarIcon: ({ tintColor }) => (
-                    <IconMC
-                        name="food"
-                        color={tintColor}
-                        size={24}
-                    />
+                    <IconMC name="food" color={tintColor} size={24} />
                 )
             }
         },
@@ -42,11 +38,7 @@ export default createBottomTabNavigator(
             navigationOptions: {
                 tabBarLabel: 'Postworkout',
                 tabBarIcon: ({ tintColor }) => (
-                    <IconMC
-                        name="run-fast"
-                        color={tintColor}
-                        size={24}
-                    />
+                    <IconMC name="run-fast" color={tintColor} size={24} />
                 )
             }
         }

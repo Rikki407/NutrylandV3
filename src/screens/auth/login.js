@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Container, Form, Item, Button, Label, Input, Text } from 'native-base';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { connect } from 'react-redux';
 import {
     emailChanged,
@@ -42,6 +42,10 @@ class Login extends Component {
     render() {
         return (
             <Container style={styles.container}>
+                <Image
+                    source={require('../../assets/NutryLandLogo.png')}
+                    style={{ height: 200, width: 200, alignSelf: 'center' }}
+                />
                 <Form>
                     <Item floatingLabel>
                         <Label>Email</Label>
@@ -92,10 +96,10 @@ class Login extends Component {
                         <Text
                             style={{
                                 fontSize: 18,
-                                textDecorationLine: 'underline'
                             }}
-                        >
-                            Dont have an account?
+                            uppercase={false}
+                        > 
+                            Sign Up Here
                         </Text>
                     </Button>
                 </Form>

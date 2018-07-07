@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 import { connect } from 'react-redux';
 import { Container, Form, Item, Button, Label, Input, Text } from 'native-base';
 import {
@@ -11,6 +11,17 @@ import {
 } from '../../actions';
 
 class SignUp extends Component {
+    static navigationOptions = {
+        title: 'Sign Up',
+        headerStyle: {
+            backgroundColor: '#f4511e'
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+            textAlign: 'center',
+            flex: 0.85
+        }
+    };
     componentWillReceiveProps(nextProps) {
         if (nextProps.userLoggedIn) {
             this.props.navigation.replace('Home');
@@ -34,47 +45,60 @@ class SignUp extends Component {
     }
     render() {
         return (
-            <Container style={styles.container}>
-                <Form style={{ flex: 0.8 }}>
-                    <Item floatingLabel>
-                        <Label>First Name</Label>
-                        <Input
-                            autoCorrect={false}
-                            onChangeText={this.fnTextChanged.bind(this)}
-                        />
-                    </Item>
-                    <Item floatingLabel>
-                        <Label>Last Name</Label>
-                        <Input
-                            autoCorrect={false}
-                            onChangeText={this.lnTextChanged.bind(this)}
-                        />
-                    </Item>
-                    <Item floatingLabel>
-                        <Label>Email</Label>
-                        <Input
-                            autoCorrect={false}
-                            onChangeText={this.emailTextChanged.bind(this)}
-                        />
-                    </Item>
-                    <Item floatingLabel>
-                        <Label>Password</Label>
-                        <Input
-                            autoCorrect={false}
-                            onChangeText={this.passwordTextChanged.bind(this)}
-                            secureTextEntry
-                        />
-                    </Item>
-                    <Button
-                        success
-                        full
-                        rounded
-                        onPress={this.registerButtonPressed.bind(this)}
-                        style={{ marginTop: 50 }}
-                    >
-                        <Text>Register</Text>
-                    </Button>
-                </Form>
+            <Container style={{ backgroundColor: '#fff' }}>
+                <Image
+                    source={require('../../assets/NutryLandLogo.png')}
+                    style={{
+                        height: 200,
+                        width: 200,
+                        alignSelf: 'center',
+                        flex: 0.24
+                    }}
+                />
+                <View style={styles.view}>
+                    <Form>
+                        <Item floatingLabel>
+                            <Label>First Name</Label>
+                            <Input
+                                autoCorrect={false}
+                                onChangeText={this.fnTextChanged.bind(this)}
+                            />
+                        </Item>
+                        <Item floatingLabel>
+                            <Label>Last Name</Label>
+                            <Input
+                                autoCorrect={false}
+                                onChangeText={this.lnTextChanged.bind(this)}
+                            />
+                        </Item>
+                        <Item floatingLabel>
+                            <Label>Email</Label>
+                            <Input
+                                autoCorrect={false}
+                                onChangeText={this.emailTextChanged.bind(this)}
+                            />
+                        </Item>
+                        <Item floatingLabel>
+                            <Label>Password</Label>
+                            <Input
+                                autoCorrect={false}
+                                onChangeText={this.passwordTextChanged.bind(
+                                    this
+                                )}
+                                secureTextEntry
+                            />
+                        </Item>
+                        <Button
+                            success
+                            full
+                            rounded
+                            onPress={this.registerButtonPressed.bind(this)}
+                            style={{ marginTop: 50 }}
+                        >
+                            <Text>Register</Text>
+                        </Button>
+                    </Form>
+                </View>
             </Container>
         );
     }
@@ -95,8 +119,8 @@ export default connect(
 )(SignUp);
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
+    view: {
+        flex: 0.5,
         backgroundColor: '#fff',
         justifyContent: 'center',
         padding: 10

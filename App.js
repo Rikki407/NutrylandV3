@@ -8,6 +8,7 @@ import LoginScreen from './src/screens/auth/login';
 import reducers from './src/reducers';
 import MainScreen from './src/screens/home/main';
 import SignupScreen from './src/screens/auth/signup';
+import ToastScreen from './src/screens/auth/toast';
 
 export default class App extends React.Component {
     componentWillMount() {
@@ -32,7 +33,8 @@ export default class App extends React.Component {
     }
 }
 const AppStackNavigator = createStackNavigator({
+    Toast: ToastScreen,
     Login: LoginScreen,
     SignUp: SignupScreen,
-    Home : MainScreen
+    Home: MainScreen
 });

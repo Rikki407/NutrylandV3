@@ -11,8 +11,8 @@ import {
 } from '../../actions';
 
 class SignUp extends Component {
-    componentWillMount() {
-        if (this.props.userLoggedIn) {
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.userLoggedIn) {
             this.props.navigation.navigate('Home');
         }
     }
@@ -80,8 +80,8 @@ class SignUp extends Component {
     }
 }
 const mapStateToProps = state => {
-    const { email, password, fname, lname } = state.signup;
-    return { email, password, fname, lname };
+    const { email, password, fname, lname, userLoggedIn } = state.signup;
+    return { email, password, fname, lname, userLoggedIn };
 };
 export default connect(
     mapStateToProps,

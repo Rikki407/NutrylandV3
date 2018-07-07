@@ -43,6 +43,7 @@ export const registerUser = ({ email, password, fname, lname }) => {
             .auth()
             .createUserWithEmailAndPassword(email, password)
             .then(user => {
+                console.log(user);
                 dispatch({
                     type: USER_REGISTERED,
                     payload: user

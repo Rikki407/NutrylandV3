@@ -14,8 +14,8 @@ class Login extends Component {
     static navigationOptions = {
         header: null
     };
-    componentWillReceiveProps() {
-        if (this.props.userLoggedIn) {
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.userLoggedIn) {
             this.props.navigation.navigate('Home');
         }
     }
@@ -38,7 +38,6 @@ class Login extends Component {
     onCreateAccountPress() {
         this.props.navigation.navigate('SignUp');
     }
-    
 
     render() {
         return (
@@ -106,8 +105,8 @@ class Login extends Component {
 }
 
 const mapStateToProps = state => {
-    const { email, password } = state.auth;
-    return { email, password };
+    const { email, password, userLoggedIn } = state.auth;
+    return { email, password, userLoggedIn };
 };
 
 export default connect(

@@ -7,6 +7,7 @@ import {
     Image,
     Dimensions
 } from 'react-native';
+import  from '../../../actions';
 import Category from './category';
 import Home from './home';
 

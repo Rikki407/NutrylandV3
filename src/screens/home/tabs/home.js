@@ -40,9 +40,9 @@ class Home extends Component {
                         PRIVATE ROOM - 2 BEDS
                     </Text>
                     <Text style={{ fontSize: 12, fontWeight: 'bold' }}>
-                        The Cozy Palace
+                        {this.props.itemName}
                     </Text>
-                    <Text style={{ fontSize: 10 }}>82$</Text>
+                    <Text style={{ fontSize: 10 }}>₹{this.props.itemPrice}</Text>
                 </View>
             </View>
         );

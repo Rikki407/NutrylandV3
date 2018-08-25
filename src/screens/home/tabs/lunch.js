@@ -4,7 +4,7 @@ import {
     StyleSheet,
     SafeAreaView,
     ScrollView,
-    Dimensions,
+    Dimensions
 } from 'react-native';
 import SnackBar from 'react-native-snackbar-component';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -125,7 +125,10 @@ class Lunch extends Component {
                                         >
                                             Vegetarian
                                         </Text>
-                                        <MenuItemsCard itemName="Panner and Veggie Sub" imgUrl='http://flavouroma.com/wp-content/uploads/2017/05/paneer-bhurji-recipe-13.jpg' />
+                                        <MenuItemsCard
+                                            itemName="Panner and Veggie Sub"
+                                            imgUrl="http://flavouroma.com/wp-content/uploads/2017/05/paneer-bhurji-recipe-13.jpg"
+                                        />
                                     </View>
                                     <View
                                         style={{
@@ -141,7 +144,10 @@ class Lunch extends Component {
                                         >
                                             Non Vegetarian
                                         </Text>
-                                        <MenuItemsCard itemName="Chicken Ceasar Salad" imgUrl='https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--327831_11.jpg?itok=8GjuBS4F' />
+                                        <MenuItemsCard
+                                            itemName="Chicken Ceasar Salad"
+                                            imgUrl="https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--327831_11.jpg?itok=8GjuBS4F"
+                                        />
                                     </View>
                                     <View
                                         style={{
@@ -157,10 +163,13 @@ class Lunch extends Component {
                                         >
                                             Eggiterian
                                         </Text>
-                                        <MenuItemsCard itemName="Soya and Tofu Delight Sandwich" imgUrl='https://www.ndtv.com/cooks/images/grilled.sandwich.jpg' />
+                                        <MenuItemsCard
+                                            itemName="Soya and Tofu Delight Sandwich"
+                                            imgUrl="https://www.ndtv.com/cooks/images/grilled.sandwich.jpg"
+                                        />
                                     </View>
                                 </View>
-                                <View style={{ marginTop: 40 }}>
+                                <View style={{ marginTop: 40, marginBottom: 40 }}>
                                     <Text
                                         style={{
                                             fontSize: 24,
@@ -179,9 +188,16 @@ class Lunch extends Component {
                                             justifyContent: 'space-between'
                                         }}
                                     >
-                                        <Home width={width} />
-                                        <Home width={width} />
-                                        <Home width={width} />
+                                        <Home
+                                            width={width}
+                                            itemName="Lemonade Iced Green Tea"
+                                            itemPrice="65"
+                                        />
+                                        <Home
+                                            width={width}
+                                            itemName="Tangy Fruit Salad"
+                                            itemPrice="75"
+                                        />
                                     </View>
                                 </View>
                             </ScrollView>

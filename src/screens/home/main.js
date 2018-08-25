@@ -2,23 +2,25 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconMC from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Breakfast, Lunch, Dinner, Postworkout } from './tabs';
+import { Lunch, Dinner, Postworkout } from './tabs';
+import Breakfast from './tabs/breakfast';
 
 export default createBottomTabNavigator(
     {
-        Breakfast: {
-            screen: Breakfast,
-            navigationOptions: {
-                tabBarLabel: 'Breakfast',
-                tabBarIcon: ({ tintColor }) => (
-                    <Icon name="md-sunny" color={tintColor} size={24} />
-                )
-            }
-        },
+        // Breakfast: {
+        //     screen: Breakfast,
+        //     navigationOptions: {
+        //         tabBarLabel: 'Breakfast',
+        //         tabBarIcon: ({ tintColor }) => (
+        //             <Icon name="md-sunny" color={tintColor} size={24} />
+        //         )
+        //     }
+        // },
         Lunch: {
             screen: Lunch,
             navigationOptions: {
                 tabBarLabel: 'Lunch',
+
                 tabBarIcon: ({ tintColor }) => (
                     <IconMC name="food" color={tintColor} size={24} />
                 )

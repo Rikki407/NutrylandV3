@@ -9,6 +9,7 @@ import LoginScreen from './src/screens/auth/login';
 import reducers from './src/reducers';
 import MainScreen from './src/screens/home/main';
 import SignupScreen from './src/screens/auth/signup';
+import { Lunch } from './src/screens/home/tabs/lunch';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ export default class App extends React.Component {
     async componentWillMount() {
         await Expo.Font.loadAsync({
             Roboto: require('native-base/Fonts/Roboto.ttf'),
-            Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+            Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
         });
         this.setState({ loading: false });
         // Initialize Firebase
@@ -47,7 +48,12 @@ export default class App extends React.Component {
     }
 }
 const AppStackNavigator = createStackNavigator({
-    Login: LoginScreen,
-    Home: MainScreen,
+    // Login: LoginScreen,
+    Home: {
+        screen: MainScreen,
+        navigationOptions: {
+            header: null
+        }
+    },
     SignUp: SignupScreen
 });

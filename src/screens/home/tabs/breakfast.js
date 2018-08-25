@@ -7,12 +7,17 @@ import {
     Image,
     Dimensions
 } from 'react-native';
-import  from '../../../actions';
+import { connect } from 'react-redux';
+
+import { menuFetch } from '../../../actions';
 import Category from './category';
 import Home from './home';
 
 const { width } = Dimensions.get('window');
 class Breakfast extends Component {
+    componentWillMount() {
+        this.props.menuFetch();
+    }
     render() {
         return (
             <SafeAreaView style={{ flex: 1 }}>
@@ -112,4 +117,13 @@ class Breakfast extends Component {
     }
 }
 
-export { Breakfast };
+const mapStateToProps = state => {
+    const { breakfast, dinner, lunch, postWorkOut } = state.menu;
+    return { breakfast, dinner, lunch, postWorkOut };
+};
+export default connect(
+    mapStateToProps,
+    {
+        menuFetch
+    }
+)(Breakfast);

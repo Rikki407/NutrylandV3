@@ -6,6 +6,7 @@ const INITIAL_STATE = {
     postWorkOut: ''
 };
 export default (state = INITIAL_STATE, action) => {
+    console.log(action.payload); 
     switch (action.type) {
         case MENU_FETCH_SUCCESS:
             return { ...state, breakfast: action.payload };

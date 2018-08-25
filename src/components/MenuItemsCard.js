@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, Dimensions, View } from 'react-native';
 import {
     Container,
     Header,
@@ -9,52 +9,83 @@ import {
     Thumbnail,
     Text,
     Button,
-    Icon,
     Left,
+    Icon,
     Body,
     Right
 } from 'native-base';
-const MenuItemsCard = (props) => {
+const { width } = Dimensions.get('window');
+
+const MenuItemsCard = ({ imgUrl, itemName }) => {
     return (
-        <Container>
-            <Header />
-            <Content>
+        <View>
+            <Content
+                style={{
+                    width: width - 40,
+                    alignSelf: 'center',
+                    marginTop: 10
+                }}
+            >
                 <Card>
-                    <CardItem>
-                        <Left>
-                            <Thumbnail source={{ uri: 'Image URL' }} />
-                            <Body>
-                                <Text>NativeBase</Text>
-                                <Text note>GeekyAnts</Text>
-                            </Body>
-                        </Left>
-                    </CardItem>
                     <CardItem cardBody>
                         <Image
-                            source={{ uri: 'Image URL' }}
+                            source={{ uri: imgUrl }}
                             style={{ height: 200, width: null, flex: 1 }}
                         />
                     </CardItem>
                     <CardItem>
-                        <Left>
-                            <Button transparent>
-                                <Icon active name="thumbs-up" />
-                                <Text>12 Likes</Text>
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Button transparent>
-                                <Icon active name="chatbubbles" />
-                                <Text>4 Comments</Text>
-                            </Button>
+                        <Body
+                            style={{
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}
+                        >
+                            <Text
+                                style={{
+                                    fontWeight: '600'
+                                }}
+                            >
+                                {itemName}
+                            </Text>
                         </Body>
+
                         <Right>
-                            <Text>11h ago</Text>
+                            <View
+                                style={{
+                                    flexDirection: 'row',
+                                    justifyContent: 'center',
+                                    alignItems: 'center'
+                                }}
+                            >
+                                <Button transparent success>
+                                    <Icon
+                                        type="FontAwesome"
+                                        name="minus-circle"
+                                        style={{ fontSize: 28 }}
+                                    />
+                                </Button>
+                                <Text
+                                    style={{
+                                        fontSize: 22,
+                                        color: '#1CB686',
+                                        marginHorizontal: 2
+                                    }}
+                                >
+                                    0
+                                </Text>
+                                <Button transparent success>
+                                    <Icon
+                                        type="FontAwesome"
+                                        name="plus-circle"
+                                        style={{ fontSize: 28 }}
+                                    />
+                                </Button>
+                            </View>
                         </Right>
                     </CardItem>
                 </Card>
             </Content>
-        </Container>
+        </View>
     );
 };
 

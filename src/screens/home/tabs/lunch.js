@@ -30,12 +30,12 @@ class Lunch extends Component {
         return (
             <View style={styles.container}>
                 <Container>
-                    <Header hasSegment>
+                    <Header hasSegment style={{ backgroundColor: '#ffffff' }}>
                         <Left>
                             <Button transparent>
                                 <Icon
                                     name="md-menu"
-                                    color="#f4511e"
+                                    color="#1CB686"
                                     size={28}
                                 />
                             </Button>
@@ -45,12 +45,12 @@ class Lunch extends Component {
                                 <Button
                                     first
                                     style={{
-                                        borderColor: '#f4511e'
+                                        borderColor: '#1CB686'
                                     }}
                                 >
                                     <Text
                                         style={{
-                                            color: '#f4511e'
+                                            color: '#1CB686'
                                         }}
                                     >
                                         High Protien
@@ -60,8 +60,8 @@ class Lunch extends Component {
                                     last
                                     active
                                     style={{
-                                        borderColor: '#f4511e',
-                                        backgroundColor: '#f4511e'
+                                        borderColor: '#1CB686',
+                                        backgroundColor: '#1CB686'
                                     }}
                                 >
                                     <Text>Weight Loss</Text>
@@ -126,82 +126,41 @@ class Lunch extends Component {
                                         >
                                             Vegetarian
                                         </Text>
+                                        <MenuItemsCard itemName="Panner and Veggie Sub" imgUrl='http://flavouroma.com/wp-content/uploads/2017/05/paneer-bhurji-recipe-13.jpg' />
+                                    </View>
+                                    <View
+                                        style={{
+                                            marginTop: 40,
+                                            paddingHorizontal: 20
+                                        }}
+                                    >
                                         <Text
                                             style={{
-                                                fontWeight: '100',
-                                                marginTop: 10
+                                                fontSize: 24,
+                                                fontWeight: '700'
                                             }}
                                         >
-                                            Paneer & Veggi Sub
+                                            Non Vegetarian
                                         </Text>
-                                        <View
+                                        <MenuItemsCard itemName="Chicken Ceasar Salad" imgUrl='https://www.bbcgoodfood.com/sites/default/files/styles/recipe/public/recipe_images/recipe-image-legacy-id--327831_11.jpg?itok=8GjuBS4F' />
+                                    </View>
+                                    <View
+                                        style={{
+                                            marginTop: 40,
+                                            paddingHorizontal: 20
+                                        }}
+                                    >
+                                        <Text
                                             style={{
-                                                width: width - 40,
-                                                height: 200,
-                                                marginTop: 20
+                                                fontSize: 24,
+                                                fontWeight: '700'
                                             }}
                                         >
-                                            <Image
-                                                style={{
-                                                    flex: 1,
-                                                    height: null,
-                                                    width: null,
-                                                    resizeMode: 'cover',
-                                                    borderRadius: 5,
-                                                    borderWidth: 1,
-                                                    borderColor: '#dddddd'
-                                                }}
-                                                source={require('../../../assets/NutryLandLogo.png')}
-                                            />
-                                            <View
-                                                style={{
-                                                    justifyContent: 'flex-end',
-                                                    alignSelf: 'center',
-                                                    position: 'absolute'
-                                                }}
-                                            >
-                                                <View
-                                                    style={{
-                                                        flexDirection: 'row'
-                                                    }}
-                                                >
-                                                    <Button small warning>
-                                                        <Text
-                                                            style={{
-                                                                fontWeight:
-                                                                    '800'
-                                                            }}
-                                                        >
-                                                            -
-                                                        </Text>
-                                                    </Button>
-                                                    <Text
-                                                        style={{
-                                                            fontSize: 24,
-                                                            paddingHorizontal: 2,
-                                                            color: '#1CB686',
-                                                            backgroundColor:
-                                                                'white'
-                                                        }}
-                                                    >
-                                                        0
-                                                    </Text>
-                                                    <Button small warning>
-                                                        <Text
-                                                            style={{
-                                                                fontWeight:
-                                                                    '800'
-                                                            }}
-                                                        >
-                                                            +
-                                                        </Text>
-                                                    </Button>
-                                                </View>
-                                            </View>
-                                        </View>
+                                            Eggiterian
+                                        </Text>
+                                        <MenuItemsCard itemName="Soya and Tofu Delight Sandwich" imgUrl='https://www.ndtv.com/cooks/images/grilled.sandwich.jpg' />
                                     </View>
                                 </View>
-                                <MenuItemsCard />
                                 <View style={{ marginTop: 40 }}>
                                     <Text
                                         style={{
@@ -232,11 +191,11 @@ class Lunch extends Component {
                 </Container>
                 <SnackBar
                     visible
-                    textMessage="Your Cart"
+                    textMessage="Items in your cart"
                     actionHandler={() => {
                         console.log('snackbar button clicked!');
                     }}
-                    actionText="let's go"
+                    actionText="Checkout"
                 />{' '}
             </View>
         );

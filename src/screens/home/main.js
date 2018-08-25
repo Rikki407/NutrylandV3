@@ -20,7 +20,6 @@ export default createBottomTabNavigator(
             screen: Lunch,
             navigationOptions: {
                 tabBarLabel: 'Lunch',
-
                 tabBarIcon: ({ tintColor }) => (
                     <IconMC name="food" color={tintColor} size={24} />
                 )
@@ -47,7 +46,7 @@ export default createBottomTabNavigator(
     },
     {
         tabBarOptions: {
-            activeTintColor: '#f4511e',
+            activeTintColor: '#EA9E3F',
             inactiveTintColor: 'grey',
             style: {
                 backgroundColor: 'white',

@@ -5,7 +5,6 @@ import {
     SafeAreaView,
     ScrollView,
     Dimensions,
-    Image
 } from 'react-native';
 import SnackBar from 'react-native-snackbar-component';
 import Icon from 'react-native-vector-icons/Ionicons';
